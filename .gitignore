@@ -1,0 +1,7 @@
+__pycache__/
+requirements.txt
+dist/
+build/
+ordr.py.egg-info/
+.DS_Store
+.vscode/
