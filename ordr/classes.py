@@ -21,27 +21,28 @@ class Server:
         self.totalAvgTime = json["totalAvgTime"]
         self.totalUploadedVideosSize = json["totalUploadedVideosSize"]
 
-def get_skin(json):
-    return Skin(json["id"], False, json)
-
 class Skin:
-    def __init__(self, skinID:int, isCustomSkin:bool, json=None) -> None:
+    def __init__(self, skinID:int, isCustomSkin:bool) -> None:
         self.id = skinID
         self.customSkin = isCustomSkin
-        if json != None:
-            self._json = json
-            self.skin = json["skin"]
-            self.presentationName = json["presentationName"]
-            self.url = json["url"]
-            self.highResPreview = json["highResPreview"]
-            self.lowResPreview = json["lowResPreview"]
-            self.gridPreview = json["gridPreview"]
-            self.hasCursorMiddle = json["hasCursorMiddle"]
-            self.author = json["author"]
-            self.modified = json["modified"]
-            self.version = json["version"]
-            self.alphabeticalId = json["alphabeticalId"]
-            self.timesUsed = json["timesUsed"]
+
+    @classmethod
+    def create(self, json):
+        self = Skin(json["id"], False)
+        self._json = json
+        self.skin = json["skin"]
+        self.presentationName = json["presentationName"]
+        self.url = json["url"]
+        self.highResPreview = json["highResPreview"]
+        self.lowResPreview = json["lowResPreview"]
+        self.gridPreview = json["gridPreview"]
+        self.hasCursorMiddle = json["hasCursorMiddle"]
+        self.author = json["author"]
+        self.modified = json["modified"]
+        self.version = json["version"]
+        self.alphabeticalId = json["alphabeticalId"]
+        self.timesUsed = json["timesUsed"]
+        return self
 
 class Render:
     def __init__(self, json, reduce) -> None:
