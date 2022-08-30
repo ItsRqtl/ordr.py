@@ -27,12 +27,12 @@ class AsyncOrdrClient:
             async with session.post(f"{BASEURL}/renders", data=data, headers=headers) as resp:
                 return NewRenderRespond(resp.status, await resp.content.read())
 
-    async def get_render(self, pageSize:int=50, page:int=1, ordrUsername:str=None, replayUsername:str=None, renderID:int=None, nobots:bool=False, link:str=None, beatmapsetid:int=None, reduceInfo:bool=False):
+    async def get_render(self, pageSize:int=50, page:int=1, ordrUsername:str="", replayUsername:str="", renderID:int="", nobots:bool=False, link:str="", beatmapsetid:int="", reduceInfo:bool=False):
         async with aiohttp.ClientSession() as session:
             async with session.get(f"{BASEURL}/renders", params={"pageSize": pageSize, "page": page, "ordrUsername": ordrUsername, "replayUsername": replayUsername, "renderID": renderID, "nobots": f"{nobots}".lower(), "link": link, "beatmapsetid": beatmapsetid}) as resp:
                 return GetRenderRespond(resp.status, await resp.content.read(), reduceInfo)
 
-    async def get_skin(self, pageSize:int=100, page:int=1, search:str=None):
+    async def get_skin(self, pageSize:int=100, page:int=1, search:str=""):
         async with aiohttp.ClientSession() as session:
             async with session.get(f"{BASEURL}/skins", params={"pageSize": pageSize, "page": page, "search": search}) as resp:
                 return GetSkinRespond(resp.status, await resp.content.read())

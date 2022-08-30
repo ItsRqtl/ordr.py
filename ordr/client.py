@@ -28,11 +28,11 @@ class OrdrClient:
         resp = requests.post(f"{BASEURL}/renders", headers=headers, data=data)
         return NewRenderRespond(resp.status_code, resp.content)
 
-    def get_render(self, pageSize:int=50, page:int=1, ordrUsername:str=None, replayUsername:str=None, renderID:int=None, nobots:bool=False, link:str=None, beatmapsetid:int=None, reduceInfo:bool=False):
+    def get_render(self, pageSize:int=50, page:int=1, ordrUsername:str="", replayUsername:str="", renderID:int="", nobots:bool=False, link:str="", beatmapsetid:int="", reduceInfo:bool=False):
         resp = requests.get(f"{BASEURL}/renders", params={"pageSize": pageSize, "page": page, "ordrUsername": ordrUsername, "replayUsername": replayUsername, "renderID": renderID, "nobots": f"{nobots}".lower(), "link": link, "beatmapsetid": beatmapsetid})
         return GetRenderRespond(resp.status_code, resp.content, reduceInfo)
 
-    def get_skin(self, pageSize:int=100, page:int=1, search:str=None):
+    def get_skin(self, pageSize:int=100, page:int=1, search:str=""):
         resp = requests.get(f"{BASEURL}/skins", params={"pageSize": pageSize, "page": page, "search": search})
         return GetSkinRespond(resp.status_code, resp.content)
 

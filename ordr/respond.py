@@ -1,6 +1,6 @@
 import json
 
-from ordr.classes import Render, Server, Skin, Request
+from ordr.classes import Render, Server, get_skin, Request
 
 class GetSkinRespond:
     def __init__(self, status, data) -> None:
@@ -15,7 +15,7 @@ class GetSkinRespond:
             if "skins" in self._json:
                 self.skins = []
                 for i in self._json["skins"]:
-                    self.skins.append(Skin.get_skin(i))
+                    self.skins.append(get_skin(i))
                 if len(self.skins) == 0:
                     self.skins=None
 
