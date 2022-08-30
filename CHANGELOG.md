@@ -4,13 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-<<<<<<< HEAD
 ## [0.0.6] - 2022-08-30
 ### Changed
 - changed the way to create Skin objects
 
-=======
->>>>>>> 0bfb1db3040e9b4a9d90c4e6375c8adc0f7b53a4
 ## [0.0.5] - 2022-08-30
 ### Fixed
 - get_skin now returns Skin object properly
