@@ -19,6 +19,10 @@ pip install ordr.py
 - [Documentation](/docs/DOCS.md)
 - [changelog](/CHANGELOG.md)
 
+## Issue
+
+If you have any questions, please start a GitHub issue or contact me via Discord (o!rdr discord server/dm Rqtl#4189).
+
 ## Credits
 
 - [o!rdr API](https://ordr.issou.best/docs)
