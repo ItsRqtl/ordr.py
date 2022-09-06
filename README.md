@@ -21,7 +21,7 @@ pip install ordr.py
 
 ## Issue
 
-If you have any questions, please start a GitHub issue or contact me via Discord (o!rdr discord server/dm Rqtl#4189).
+If you have any questions, please start a GitHub issue or contact me via Discord (Rqtl#4189, friend requests will not be accepted, dm is open to o!rdr discord server).
 
 ## Credits
 
