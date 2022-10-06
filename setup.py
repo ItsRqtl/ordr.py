@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.6' 
+VERSION = '0.0.7' 
 DESCRIPTION = 'A simple o!rdr API and Websocket wrapper.'
 LONG_DESCRIPTION = 'ordr.py is a simple and easy to use o!rdr API and Websocket wrapper.'
 
@@ -15,7 +15,7 @@ setup(
     url="https://github.com/ItsRqtl/ordr.py",
     license="MIT",
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
         "Programming Language :: Python :: 3"
