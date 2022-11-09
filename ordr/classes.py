@@ -27,22 +27,22 @@ class Skin:
         self.customSkin = isCustomSkin
 
     @classmethod
-    def create(self, json):
-        self = Skin(json["id"], False)
-        self._json = json
-        self.skin = json["skin"]
-        self.presentationName = json["presentationName"]
-        self.url = json["url"]
-        self.highResPreview = json["highResPreview"]
-        self.lowResPreview = json["lowResPreview"]
-        self.gridPreview = json["gridPreview"]
-        self.hasCursorMiddle = json["hasCursorMiddle"]
-        self.author = json["author"]
-        self.modified = json["modified"]
-        self.version = json["version"]
-        self.alphabeticalId = json["alphabeticalId"]
-        self.timesUsed = json["timesUsed"]
-        return self
+    def create(cls, json):
+        cls = Skin(json["id"], False)
+        cls._json = json
+        cls.skin = json["skin"]
+        cls.presentationName = json["presentationName"]
+        cls.url = json["url"]
+        cls.highResPreview = json["highResPreview"]
+        cls.lowResPreview = json["lowResPreview"]
+        cls.gridPreview = json["gridPreview"]
+        cls.hasCursorMiddle = json["hasCursorMiddle"]
+        cls.author = json["author"]
+        cls.modified = json["modified"]
+        cls.version = json["version"]
+        cls.alphabeticalId = json["alphabeticalId"]
+        cls.timesUsed = json["timesUsed"]
+        return cls
 
 class Render:
     def __init__(self, json, reduce) -> None:
