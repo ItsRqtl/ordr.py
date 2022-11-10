@@ -13,11 +13,7 @@ class GetSkinRespond:
             self.message = self._json["message"] if "message" in self._json else None
             self.maxSkins = self._json["maxSkins"] if "maxSkins" in self._json else None
             if "skins" in self._json:
-                self.skins = []
-                for i in self._json["skins"]:
-                    self.skins.append(Skin.create(i))
-                if len(self.skins) == 0:
-                    self.skins=None
+                self.skins = [Skin.create(i) for i in self._json["skins"]] or None
 
 class CustomSkinRespond:
     def __init__(self, status, data) -> None:
@@ -45,9 +41,7 @@ class GetRenderRespond:
         else:
             self.maxRenders = self._json["maxRenders"] if "maxRenders" in self._json else None
             if "renders" in self._json:
-                self.renders = []
-                for i in self._json["server"]:
-                    self.renders.append(Render(i, reduce))
+                self.renders = [Render(i, reduce) for i in self._json["server"]]
 
 class NewRenderRespond:
     def __init__(self, status, data) -> None:
@@ -71,6 +65,4 @@ class GetServersRespond:
             self.message = data.decode("utf-8")
         else:
             if "servers" in self._json:
-                self.servers = []
-                for i in self._json["server"]:
-                    self.servers.append(Server(i))
+                self.servers = [Server(i) for i in self._json["server"]]
